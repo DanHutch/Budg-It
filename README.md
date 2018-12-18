@@ -13,6 +13,8 @@ Things you may want to cover:
 
 * Configuration
 
+![Schema Diagram](./schema_diagram.png)
+
 * Database creation
 
 * Database initialization
@@ -22,5 +24,3 @@ Things you may want to cover:
 * Services (job queues, cache servers, search engines, etc.)
 
 * Deployment instructions
-
-* ...
