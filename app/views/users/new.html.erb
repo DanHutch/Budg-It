@@ -1,0 +1,12 @@
+<h1>Register</h1>
+
+<%= form_for @user do |f| %>
+	<%= f.label :name%>
+	<%= f.text_field :name, placeholder: "Your Name" %>
+	<%= f.label :phone%>
+	<%= f.text_field :phone, placeholder: "###-###-####" %>
+	<%= f.label :email %>
+	<%= f.text_field :email, placeholder: "Your Email Address" %>
+	<%= f.submit "Register User"%>		
+<% end %>
+	
