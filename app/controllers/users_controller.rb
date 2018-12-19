@@ -8,12 +8,11 @@ class UsersController < ApplicationController
 		@user = User.new(ready_params)
 		if @user.save
       session[:user_id] = @user.id
-      flash[:message] = "Logged in as #{@user.name}"
-    else
+			redirect_to oauth_path
+		else
       flash[:error] = 'Username already exists'
       render :new
     end
-		# redirect_to login_path
 	end
 
 	private
