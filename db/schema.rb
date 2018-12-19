@@ -25,8 +25,8 @@ ActiveRecord::Schema.define(version: 2018_12_18_201727) do
   create_table "notifications", force: :cascade do |t|
     t.bigint "category_id"
     t.time "time"
-    t.boolean "email_notice"
-    t.boolean "text_notice"
+    t.boolean "email_notice", default: true
+    t.boolean "text_notice", default: false
     t.index ["category_id"], name: "index_notifications_on_category_id"
   end
 
