@@ -3,7 +3,7 @@ require "rails_helper"
 RSpec.describe "/privacy" do
 	it "should display the privacy policy" do 
 		visit registration_path
-		
+
 		click_link("Privacy Policy")
 
 		expect(current_path).to eq(privacy_path)
