@@ -7,14 +7,15 @@ end
 def create
 	@user = current_user
 	data = request.env["omniauth.auth"]	  
-	token = @user.tokens.create(token: data["access_token"], refresh_token: data["refresh_token"])
+	token = @user.tokens.new(token: data["access_token"], refresh_token: data["refresh_token"])
 	if token.save
 		puts "This Token Saved!"
-		puts "#{request.env["omniauth.auth"]}"
+		puts "this is the data: #{data} END OF DATA"
 		redirect_to dashboard_path
 	else 
 		puts "Token Not Saved"
-		puts "#{request.env["omniauth.auth"]}"
+		puts "this is the data: #{data} END OF DATA"		
+		redirect_to root_path
 	end
 end
 
