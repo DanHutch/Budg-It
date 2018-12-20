@@ -12,11 +12,6 @@
   <body>
     <header>
       <div class="container">
-        <div class="flash-msgs">
-         <% flash.each do |name, msg| %>
-            <%= content_tag :div, msg, class: name %>
-          <% end %>
-        </div>
         <a class="logo" href="/">
           <h1>Budg-It</h1>
         </a>
@@ -27,6 +22,11 @@
       </div>
     </header>
     <div class="content">
+      <div class="flash-msgs">
+       <% flash.each do |name, msg| %>
+          <%= content_tag :div, msg, class: name %>
+        <% end %>
+      </div>
       <%= yield %>
     </div>
     <footer>
