@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>BudgIt</title>
+    <title>Budg-It</title>
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
 
@@ -11,16 +11,28 @@
 
   <body>
     <header>
-      <div class="flash-msgs">
-       <% flash.each do |name, msg| %>
-          <%= content_tag :div, msg, class: name %>
-        <% end %>
-      </div>
-      <div>
-        <%=link_to "Register", registration_path %>
-        <%=link_to "Log In", login_path %>
+      <div class="container">
+        <div class="flash-msgs">
+         <% flash.each do |name, msg| %>
+            <%= content_tag :div, msg, class: name %>
+          <% end %>
+        </div>
+        <a class="logo" href="/">
+          <h1>Budg-It</h1>
+        </a>
+        <nav>
+          <%=link_to "Register", registration_path %>
+          <%=link_to "Log In", login_path %>
+        </nav>
       </div>
     </header>
-    <%= yield %>
+    <div class="content">
+      <%= yield %>
+    </div>
+    <footer>
+      <div class="container">
+
+      </div>
+    </footer>
   </body>
 </html>
