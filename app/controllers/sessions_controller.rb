@@ -7,7 +7,7 @@ end
 def create
 	@user = current_user
 	data = request.env["omniauth.auth"]	  
-	token = @user.tokens.new(token: data["access_token"], refresh_token: data["refresh_token"])
+	token = @user.tokens.new(token: data["credentials"]["token"], refresh_token: data["credentials"]["refresh_token"])
 	if token.save
 		puts "This Token Saved!"
 		puts "this is the data: #{data} END OF DATA"
