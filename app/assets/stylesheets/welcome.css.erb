@@ -1,5 +1,24 @@
 section.white.landing {
-  padding:80px 0;
+  padding:0;
+  position: relative;
+  color:#f6f6f6;
+  height:250px;
+  overflow: hidden;
+}
+
+.blur-bg {
+  background: linear-gradient(rgba(0,0,0,0.5),rgba(0,0,0,0.5)), url(<%= image_path('financial_papers.jpg')%>);
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  width: 110%;
+  height: 280px;
+  filter: blur(8px);
+  -webkit-filter: blur(8px);
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translateX(-50%) translateY(-50%);
 }
 .welcome {
   display: flex;
@@ -9,5 +28,8 @@ section.white.landing {
   width: 250px;
   margin: auto;
   text-align: center;
-  background-image:url(<%= image_url('financial_paperwork.png')%>);
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translateX(-50%) translateY(-50%);
 }
