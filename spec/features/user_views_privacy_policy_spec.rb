@@ -1,10 +1,12 @@
 require "rails_helper"
 
 RSpec.describe "/privacy" do
-	it "should display the privacy policy" do 
+	it "should display the privacy policy" do
 		visit registration_path
 
-		click_link("Privacy Policy")
+		within('.content') do
+			click_link("Privacy Policy")
+		end
 
 		expect(current_path).to eq(privacy_path)
 		expect(page).to have_content("Privacy Policy")
