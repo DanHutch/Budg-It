@@ -7,6 +7,8 @@ Rails.application.routes.draw do
   get '/oauth', to: redirect('/auth/ynab'), as: 'oauth'
 
   get 'login', to: "sessions#new", as: 'login'
+
+  get '/dashboard', to: "users#show", as: "dashboard"
   
   get '/auth/:provider/callback', to: 'sessions#create'
   get 'auth/failure', to: redirect('/')

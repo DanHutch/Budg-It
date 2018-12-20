@@ -15,6 +15,10 @@ class UsersController < ApplicationController
     end
 	end
 
+	def show
+		
+	end
+
 	private
 
 	def ready_params

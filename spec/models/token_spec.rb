@@ -9,7 +9,7 @@ RSpec.describe Token, type: :model do
 	describe "validations" do
 		it {should validate_presence_of(:token)}
 		it {should validate_presence_of(:user_id)}
-		it {should validate_presence_of(:ynab_uid)}
+		it {should validate_presence_of(:refresh_token)}
 	end
 	
 
