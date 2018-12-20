@@ -9,12 +9,10 @@ def create
 	data = request.env["omniauth.auth"]	  
 	token = @user.tokens.new(token: data["credentials"]["token"], refresh_token: data["credentials"]["refresh_token"])
 	if token.save
-		puts "This Token Saved!"
-		puts "this is the data: #{data} END OF DATA"
+		flash[:success] = "Successully Logged in through YNAB!"
 		redirect_to dashboard_path
 	else 
-		puts "Token Not Saved"
-		puts "this is the data: #{data} END OF DATA"		
+		flash[:failure] = "Something went wrong."
 		redirect_to root_path
 	end
 end
