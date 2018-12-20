@@ -50,5 +50,4 @@ def stub_omniauth
   OmniAuth.config.test_mode = true
 
   OmniAuth.config.mock_auth[:ynab] = OmniAuth::AuthHash.new({"credentials"=>{"token"=>ENV['ACCESS_TOKEN'], "token_type"=>"Bearer", "expires_in"=>7200, "refresh_token"=>ENV['REFRESH_TOKEN'], "scope"=>"public", "created_at"=>1545264495}})
-  # OmniAuth.config.mock_auth[:ynab] = OmniAuth::AuthHash.new({"access_token"=>ENV['ACCESS_TOKEN'], "token_type"=>"Bearer", "expires_in"=>7200, "refresh_token"=>ENV['REFRESH_TOKEN'], "scope"=>"public", "created_at"=>1545264495})
 end

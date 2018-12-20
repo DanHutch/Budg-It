@@ -16,5 +16,7 @@ RSpec.describe "user registration" do
 		expect(User.last.phone).to eq("3335434567")
 
 		expect(current_path).to eq(dashboard_path)
+		expect(page).to have_content("Successully Logged in through YNAB!")
+		expect(page).to have_content("Dan Daman's Dashboard")
 	end
 end
