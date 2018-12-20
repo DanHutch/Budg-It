@@ -16,6 +16,5 @@ RSpec.describe "user registration" do
 		expect(User.last.phone).to eq("3335434567")
 
 		expect(current_path).to eq(dashboard_path)
-		binding.pry
 	end
 end
