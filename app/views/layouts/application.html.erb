@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>BudgIt</title>
+    <title>Budg-It</title>
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
 
@@ -11,16 +11,32 @@
 
   <body>
     <header>
+      <div class="container">
+        <a class="logo" href="/">
+          <h1>Budg-It</h1>
+        </a>
+        <nav>
+          <%=link_to "Register", registration_path %>
+          <%=link_to "Log In", login_path %>
+        </nav>
+      </div>
+    </header>
+    <div class="content">
       <div class="flash-msgs">
        <% flash.each do |name, msg| %>
           <%= content_tag :div, msg, class: name %>
         <% end %>
       </div>
-      <div>
-        <%=link_to "Register", registration_path %>
-        <%=link_to "Log In", login_path %>
+      <%= yield %>
+    </div>
+    <footer>
+      <div class="container">
+        <div class="footer-text">
+          <p>Backend Module 3 Turing School of Software Project</p>
+          <p>By: Silvestre Cuellar, Dan Hutchinson, and Timothy Fell</p>
+          <p><%= link_to 'Privacy Policy', privacy_path %></p>
+        </div>
       </div>
-    </header>
-    <%= yield %>
+    </footer>
   </body>
 </html>
