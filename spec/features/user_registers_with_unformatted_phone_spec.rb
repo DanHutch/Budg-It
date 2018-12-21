@@ -19,11 +19,11 @@ RSpec.describe "user registration" do
 		expect(current_path).to eq(dashboard_path)
 		expect(page).to have_content("Successully Logged in through YNAB!")
 		expect(page).to have_content("Dan Daman's Dashboard")
+		expect(User.last.tokens.last.uid).to be_a(String)
 	end
 
 	it "should not let a user register with an email that is already in use" do
 		user = User.create(name: "Existing User", email: "inuse@email.com", phone: "303-333-3333")
-		stub_user_api_calls
 		stub_omniauth
 		visit root_path
 		

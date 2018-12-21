@@ -7,7 +7,7 @@ class UsersController < ApplicationController
 	def create
 		@user = User.new(ready_params)
 		if @user.save
-      	session[:user_id] = @user.id
+			session[:user_id] = @user.id
 			redirect_to oauth_path
 		else
 			flash[:error] = 'Email already in use.'

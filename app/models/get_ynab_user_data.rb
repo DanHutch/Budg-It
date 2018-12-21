@@ -11,8 +11,17 @@ class GetYnabUserData
 	
   def get_it(user)
     yuid = YnabService.new(@token).get_uid
-    user.tokens.last.uid = yuid
+    user.tokens.last.update(uid: yuid)
     user.tokens.last.save
-	end
+  end
+
+  def self.check_it(token)
+    new(token).check_it(token)
+  end
+
+  def check_it(token)
+    YnabService.new(@token).get_uid
+  end
+  
 	
 end

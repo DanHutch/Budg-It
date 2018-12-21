@@ -23,23 +23,23 @@ http_interactions:
       Server:
       - Cowboy
       Date:
-      - Fri, 21 Dec 2018 01:16:09 GMT
+      - Fri, 21 Dec 2018 02:07:05 GMT
       Connection:
       - keep-alive
       Content-Type:
       - application/json; charset=utf-8
       X-Rate-Limit:
-      - 5/200
+      - 1/200
       Vary:
       - Accept-Encoding, Origin
       Etag:
-      - W/"366d61c2000482f402d781af4cc678ba"
+      - W/"b4008d18d3942a6f17041cb98813231d"
       Cache-Control:
       - max-age=0, private, must-revalidate
       X-Request-Id:
-      - d1cc9abf-d15a-45f8-acfb-2315772982bd
+      - 8a56bf35-fe3f-4826-9ef0-d0ed1f2fee3a
       X-Runtime:
-      - '0.024337'
+      - '0.021426'
       Strict-Transport-Security:
       - max-age=15552000; includeSubDomains
       Transfer-Encoding:
@@ -50,5 +50,5 @@ http_interactions:
       encoding: ASCII-8BIT
       string: '{"data":{"user":{"id":"f3f7bcfe-45fd-42d0-8274-4b70eec8c443"}}}'
     http_version: 
-  recorded_at: Fri, 21 Dec 2018 01:16:09 GMT
+  recorded_at: Fri, 21 Dec 2018 02:07:04 GMT
 recorded_with: VCR 4.0.0
