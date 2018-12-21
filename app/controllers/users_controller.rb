@@ -7,11 +7,11 @@ class UsersController < ApplicationController
 	def create
 		@user = User.new(ready_params)
 		if @user.save
-      session[:user_id] = @user.id
+      	session[:user_id] = @user.id
 			redirect_to oauth_path
 		else
-      flash[:error] = 'Username already exists'
-      render :new
+			flash[:error] = 'Email already in use.'
+			redirect_to registration_path
     end
 	end
 

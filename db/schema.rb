@@ -47,6 +47,7 @@ ActiveRecord::Schema.define(version: 2018_12_18_201727) do
     t.string "token"
     t.bigint "user_id"
     t.string "refresh_token"
+    t.string "uid"
     t.index ["user_id"], name: "index_tokens_on_user_id"
   end
 

@@ -1,0 +1,54 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: https://api.youneedabudget.com/v1/user
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Authorization:
+      - Bearer <YNAB_USER_TOKEN>
+      User-Agent:
+      - Faraday v0.15.4
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Server:
+      - Cowboy
+      Date:
+      - Fri, 21 Dec 2018 01:16:09 GMT
+      Connection:
+      - keep-alive
+      Content-Type:
+      - application/json; charset=utf-8
+      X-Rate-Limit:
+      - 5/200
+      Vary:
+      - Accept-Encoding, Origin
+      Etag:
+      - W/"366d61c2000482f402d781af4cc678ba"
+      Cache-Control:
+      - max-age=0, private, must-revalidate
+      X-Request-Id:
+      - d1cc9abf-d15a-45f8-acfb-2315772982bd
+      X-Runtime:
+      - '0.024337'
+      Strict-Transport-Security:
+      - max-age=15552000; includeSubDomains
+      Transfer-Encoding:
+      - chunked
+      Via:
+      - 1.1 vegur
+    body:
+      encoding: ASCII-8BIT
+      string: '{"data":{"user":{"id":"f3f7bcfe-45fd-42d0-8274-4b70eec8c443"}}}'
+    http_version: 
+  recorded_at: Fri, 21 Dec 2018 01:16:09 GMT
+recorded_with: VCR 4.0.0
