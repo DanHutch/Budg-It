@@ -4,7 +4,11 @@
   <div class="container">
     <div class="welcome">
       <h2>Welcome to Budg-It!</h2>
-      <%= link_to 'Register Now', registration_path, class: 'cta-button' %>
+      <% if current_user %>
+        <%= link_to 'My Dashboard', dashboard_path, class: 'cta-button' %>
+      <% else %>
+        <%= link_to 'Register Now', registration_path, class: 'cta-button' %>
+      <% end %>
     </div>
   </div>
 </section>
