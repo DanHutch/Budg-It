@@ -15,7 +15,7 @@ VCR.configure do |config|
   config.cassette_library_dir = 'spec/cassettes'
   config.hook_into :webmock
   config.configure_rspec_metadata!
-  config.filter_sensitive_data("<SOME_KEY>") { ENV['SOME_KEY'] }
+  config.filter_sensitive_data("<YNAB_USER_TOKEN>") { ENV['YNAB_USER_TOKEN'] }
 end
 
 begin
@@ -50,4 +50,9 @@ def stub_omniauth
   OmniAuth.config.test_mode = true
 
   OmniAuth.config.mock_auth[:ynab] = OmniAuth::AuthHash.new({"credentials"=>{"token"=>ENV['ACCESS_TOKEN'], "token_type"=>"Bearer", "expires_in"=>7200, "refresh_token"=>ENV['REFRESH_TOKEN'], "scope"=>"public", "created_at"=>1545264495}})
+end
+
+def stub_user_api_calls
+  stub_request(:get, "https://api.youneedabudget.com/v1/user").
+      to_return(body: File.read("./spec/fixtures/sample_user_lookup_response.json"))
 end

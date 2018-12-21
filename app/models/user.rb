@@ -7,10 +7,4 @@ class User < ApplicationRecord
 	validates_presence_of :email
 	validates_uniqueness_of :email
 
-	def from_hash(data)
-		@name = data["name"]
-		@phone = data["phone"]
-		@email = data["email"]
-	end
-
 end
