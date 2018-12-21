@@ -30,6 +30,7 @@ group :development, :test do
   gem 'webmock'
   gem 'vcr'
   gem 'pry'
+  gem 'fuubar'
 end
 
 group :development do
