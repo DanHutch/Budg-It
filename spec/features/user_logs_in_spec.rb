@@ -7,13 +7,13 @@ RSpec.describe "/login" do
 		token = user.tokens.create(token: "bstoken", refresh_token: "alsobs", uid: "f3f7bcfe-45fd-42d0-8274-4b70eec8c443")
 		stub_user_api_calls
 		stub_omniauth
-		visit login_path	
-		
+		visit login_path
+
 		expect(page).to have_link("Login with YNAB")
 
 		click_link("Login with YNAB")
 
 		expect(current_path).to eq(dashboard_path)
-		expect(page).to have_content("Dan Man's Dashboard")
+		expect(page).to have_content("#{user.name}'s Dashboard")
 	end
 end
