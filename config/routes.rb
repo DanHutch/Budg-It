@@ -17,5 +17,7 @@ Rails.application.routes.draw do
 
   get "/privacy", to: "privacy#show", as: "privacy"
 
+  get '/thanks_welcome', to: "texter_welcome#create"
+
   resources :users, only: [:new, :create]
 end
