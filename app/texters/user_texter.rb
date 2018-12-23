@@ -3,7 +3,6 @@ class UserTexter < Textris::Base
 
   def welcome(user)
     @user = user
-    # binding.pry
     text :to => '+1'+@user.phone
   end
 end

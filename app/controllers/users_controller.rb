@@ -8,8 +8,8 @@ class UsersController < ApplicationController
 		@user = User.new(ready_params)
 		if @user.save
 			session[:user_id] = @user.id
-			redirect_to oauth_path
 			UserTexter.welcome(@user).deliver
+			redirect_to oauth_path
 		else
 			flash[:error] = 'Email already in use.'
 			redirect_to registration_path
@@ -27,7 +27,6 @@ class UsersController < ApplicationController
 		raw_phone = new_params["phone"]
 		new_phone = raw_phone.scan(/\d+/).join
 		new_phone[0] == "1" ? new_phone[0] = "" : new_phone
-		new_phone = "+1"+new_phone
 		new_params["phone"] = new_phone unless new_phone.length != 10
 		return new_params
 	end
