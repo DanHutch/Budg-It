@@ -17,7 +17,7 @@ gem 'faker'
 gem 'sendgrid-ruby'
 gem 'omniauth'
 gem 'omniauth-ynab'
-gem 'twilio'
+gem 'twilio-ruby'
 gem 'textris'
 
 group :development, :test do

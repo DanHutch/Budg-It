@@ -39,7 +39,7 @@ ActiveRecord::Schema.define(version: 2018_12_18_201727) do
     t.bigint "category_id"
     t.time "time"
     t.boolean "email_notice"
-    t.boolean "text_notice"
+    t.boolean "text_notice"t
     t.index ["category_id"], name: "index_notifications_on_category_id"
   end
 
