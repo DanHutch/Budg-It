@@ -17,6 +17,8 @@ gem 'faker'
 gem 'sendgrid-ruby'
 gem 'omniauth'
 gem 'omniauth-ynab'
+gem 'twilio'
+gem 'textris'
 
 group :development, :test do
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
