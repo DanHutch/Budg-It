@@ -1,8 +1,8 @@
 require "rails_helper"
 
-RSpec.describe Token, type: :model do 
+RSpec.describe Token, type: :model do
 
-	describe "relationships" do 
+	describe "relationships" do
 		it {should belong_to(:user)}
 	end
 
@@ -11,6 +11,4 @@ RSpec.describe Token, type: :model do
 		it {should validate_presence_of(:user_id)}
 		it {should validate_presence_of(:refresh_token)}
 	end
-	
-
 end
