@@ -33,6 +33,7 @@ group :development, :test do
   gem 'vcr'
   gem 'pry'
   gem 'fuubar'
+  gem 'mailcatcher'
 end
 
 group :development do

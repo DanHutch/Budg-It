@@ -16,6 +16,9 @@ VCR.configure do |config|
   config.hook_into :webmock
   config.configure_rspec_metadata!
   config.filter_sensitive_data("<YNAB_USER_TOKEN>") { ENV['YNAB_USER_TOKEN'] }
+  config.filter_sensitive_data("<REFRESH_TOKEN>") { ENV['REFRESH_TOKEN'] }
+  config.filter_sensitive_data("<YNAB_ID>") { ENV['YNAB_ID'] }
+  config.filter_sensitive_data("<YNAB_SECRET>") { ENV['YNAB_SECRET'] }
 end
 
 begin
