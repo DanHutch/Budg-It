@@ -7,7 +7,7 @@
 	</div>
 	<%= form_tag(categories_path, method: "put") do %>
 		<% @facade.all_categories.each do |cat| %>
-			<%= radio_button_tag :category, cat.ynab_cid, class: "category" %> <br>
+			<%= radio_button_tag :category, cat.ynab_cid, class: "category" %> <%= cat.name %> <br>
 		<% end %>
 			<%= submit_tag("Select Category") %>
 	<% end %>
