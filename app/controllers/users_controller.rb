@@ -9,6 +9,7 @@ class UsersController < ApplicationController
 		if @user.save
 			session[:user_id] = @user.id
 			UserTexter.welcome(@user).deliver
+			UserWelcomerMailer.welcome(@user).deliver_now
 			redirect_to oauth_path
 		else
 			flash[:error] = 'Email already in use.'
