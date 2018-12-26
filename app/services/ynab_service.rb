@@ -9,6 +9,17 @@ class YnabService
 		id = info[:data][:user][:id]
 	end
 
+	def get_categories
+		budget_id = get_budgets.first[:id]
+		info = get_json("/v1/budgets/#{budget_id}/categories")[:data]
+		binding.pry
+	end
+
+	def get_budgets
+		info = get_json("/v1/budgets")
+		budget = info[:data][:budgets]
+	end
+
 private
 
 	def get_json(path)

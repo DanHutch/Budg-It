@@ -56,3 +56,8 @@ def stub_user_api_calls
   stub_request(:get, "https://api.youneedabudget.com/v1/user").
       to_return(body: File.read("./spec/fixtures/sample_user_lookup_response.json"))
 end
+
+def stub_budgets_api_calls
+  stub_request(:get, "https://api.youneedabudget.com/v1/budgets").
+      to_return(body: File.read("./spec/fixtures/sample_user_budgets_response.json"))
+end
