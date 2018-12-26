@@ -18,4 +18,10 @@ Rails.application.routes.draw do
   get "/privacy", to: "privacy#show", as: "privacy"
 
   resources :users, only: [:new, :create]
+
+  # namespace :users do
+  #   put "/categories", to: "categories#update", as: "category_update"
+  # end
+
+  put "/categories", to: "categories#update", as: "categories"
 end

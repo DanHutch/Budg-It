@@ -5,6 +5,8 @@ RSpec.describe "User Registration" do
   before(:each) do
     stub_user_api_calls
     stub_omniauth
+    stub_budgets_api_calls
+		stub_categories_api_calls
     clear_emails
     Textris::Base.deliveries.clear
     visit root_path
@@ -22,6 +24,7 @@ RSpec.describe "User Registration" do
   end
 
   it "They should be redirected to their dashboard" do
+
     expect(page).to have_content("#{@name}'s Dashboard")
     expect(current_path).to eq(dashboard_path)
   end
@@ -45,7 +48,7 @@ RSpec.describe "User Registration" do
 
   it "They should receive a welcome text" do
     texts = Textris::Base.deliveries
-    
+
     expect(texts).to_not be_empty
     expect(texts.last.content).to have_content("Welcome to BudgIt #{@name}!")
   end

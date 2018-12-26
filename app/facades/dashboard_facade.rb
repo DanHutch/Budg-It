@@ -5,14 +5,30 @@ class DashboardFacade
 		@_category_results = nil
 	end
 
+	def user
+		@user
+	end
+
+	def category_count
+		@user.categories.count
+	end
+
 	def username
 		@user.name
 	end
 
-	def categories
-		category_results.map do |category_info|
-			Category.new(category_info)
+	def create_categories
+		category_results.map do |cat_info|
+		@user.categories.create({
+				ynab_cid: 	cat_info[:id],
+				name:				cat_info[:name],
+				budget_id:	budget_id
+			})
 		end
+	end
+
+	def all_categories
+		@user.categories
 	end
 
 private
@@ -21,8 +37,12 @@ private
 		@_category_results ||= service.get_categories
 	end
 
+	def budget_id
+		@_service.budget_id
+	end
+
 	def service
-		YnabService.new(@user.tokens.last)
+	@_service ||=	YnabService.new(@user.tokens.last.token)
 	end
 
 end

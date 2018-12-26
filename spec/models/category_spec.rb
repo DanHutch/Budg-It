@@ -1,9 +1,9 @@
 require "rails_helper"
 
-RSpec.describe Category, type: :model do 
+RSpec.describe Category, type: :model do
 
-	describe "relationships" do 
-		it {should belong_to(:budget)}
+	describe "relationships" do
+		it {should belong_to(:user)}
 		it {should have_many(:notifications)}
 	end
 
@@ -12,6 +12,6 @@ RSpec.describe Category, type: :model do
 		it {should validate_presence_of(:name)}
 		it {should validate_presence_of(:budget_id)}
 	end
-	
+
 
 end

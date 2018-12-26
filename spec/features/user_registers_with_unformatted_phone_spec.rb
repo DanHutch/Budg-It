@@ -4,6 +4,8 @@ RSpec.describe "user registration" do
 	it "should create user with formatted phone number" do
 		stub_user_api_calls
 		stub_omniauth
+		stub_budgets_api_calls
+		stub_categories_api_calls
 		visit root_path
 
 		click_on("Register")

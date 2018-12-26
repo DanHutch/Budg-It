@@ -7,6 +7,10 @@ RSpec.describe "/login" do
 		token = user.tokens.create(token: "bstoken", refresh_token: "alsobs", uid: "f3f7bcfe-45fd-42d0-8274-4b70eec8c443")
 		stub_user_api_calls
 		stub_omniauth
+		stub_budgets_api_calls
+
+		stub_categories_api_calls
+
 		visit login_path
 
 		expect(page).to have_link("Login with YNAB")

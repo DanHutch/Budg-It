@@ -31,8 +31,8 @@ describe YnabService do
 				VCR.use_cassette("vcr_budgets_spec") do
 					service = YnabService.new(key)
 
-					expect(service.get_budgets.first).to be_a(Hash)
-					expect(service.get_budgets.first[:id]).to be_a(String)
+					expect(service.get_default_budget).to be_a(Hash)
+					expect(service.get_default_budget[:id]).to be_a(String)
 				end
 			end
 		end

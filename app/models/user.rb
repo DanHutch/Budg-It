@@ -1,6 +1,6 @@
 class User < ApplicationRecord
 	has_many :tokens
-	has_many :budgets
+	has_many :categories
 
 	validates_presence_of :name
 	validates_presence_of :phone

@@ -1,10 +1,10 @@
 require "rails_helper"
 
-RSpec.describe User, type: :model do 
+RSpec.describe User, type: :model do
 
-	describe "relationships" do 
+	describe "relationships" do
 		it {should have_many(:tokens)}
-		it {should have_many(:budgets)}
+		it {should have_many(:categories)}
 	end
 
 	describe "validations" do
@@ -13,5 +13,5 @@ RSpec.describe User, type: :model do
 		it {should validate_presence_of(:email)}
 		it {should validate_uniqueness_of(:email)}
 	end
-	
+
 end
