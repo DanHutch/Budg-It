@@ -15,8 +15,12 @@ RSpec.describe "/dashboard" do
 		visit dashboard_path
 
 		expect(page).to have_content("#{user.name}'s Dashboard")
+		expect(page).to_not have_css(".category-data")
 		expect(page).to have_content("Please Select Category to Track:")
 		choose(:category, match: :first)
 		click_on("Select Category")
+
+		expect(current_path).to eq(dashboard_path)
+		expect(page).to have_css(".category-data")
 	end
 end
