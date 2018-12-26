@@ -26,7 +26,7 @@ RSpec.describe "user registration" do
 		user = User.create(name: "Existing User", email: "inuse@email.com", phone: "303-333-3333")
 		stub_omniauth
 		visit root_path
-		
+
 		click_on("Register")
 
 		fill_in "user[name]", with: "Dan Daman"

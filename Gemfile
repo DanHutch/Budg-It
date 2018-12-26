@@ -17,6 +17,8 @@ gem 'faker'
 gem 'sendgrid-ruby'
 gem 'omniauth'
 gem 'omniauth-ynab'
+gem 'twilio-ruby'
+gem 'textris'
 
 group :development, :test do
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
@@ -31,6 +33,7 @@ group :development, :test do
   gem 'vcr'
   gem 'pry'
   gem 'fuubar'
+  gem 'mailcatcher'
 end
 
 group :development do
