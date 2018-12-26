@@ -9,6 +9,14 @@ class DashboardFacade
 		@user
 	end
 
+	def tracked_cat_name
+		@user.tracked_category.name
+	end
+
+	def tracked_category
+		@user.tracked_category
+	end
+
 	def category_count
 		@user.categories.count
 	end

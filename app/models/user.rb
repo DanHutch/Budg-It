@@ -9,5 +9,9 @@ class User < ApplicationRecord
 
 	# after_create do
 	#   UserTexter.welcome(self).deliver
-  # end
+	# end
+	def tracked_category
+		self.categories.find_by(tracked: true)
+	end
+
 end
