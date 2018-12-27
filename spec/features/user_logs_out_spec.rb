@@ -5,8 +5,11 @@ RSpec.describe "/logout" do
 
 		user = User.create(name: "Dan Man", email: "fake@email.com", phone: "10234567890")
 		token = user.tokens.create(token: "bstoken", refresh_token: "alsobs", uid: "f3f7bcfe-45fd-42d0-8274-4b70eec8c443")
+		cat = user.categories.create(ynab_cid: "fdaslkjdg43q", name: "tracked 3", budget_id:"budget1id", tracked: true)
 		stub_user_api_calls
 		stub_omniauth
+		stub_budgets_api_calls
+		stub_categories_api_calls
 		visit login_path
 
 		expect(page).to have_link("Login with YNAB")

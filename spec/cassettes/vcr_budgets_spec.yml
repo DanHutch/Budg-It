@@ -1,0 +1,107 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: https://api.youneedabudget.com/v1/budgets
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Authorization:
+      - Bearer <YNAB_USER_TOKEN>
+      User-Agent:
+      - Faraday v0.15.4
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Server:
+      - Cowboy
+      Date:
+      - Wed, 26 Dec 2018 22:09:22 GMT
+      Connection:
+      - keep-alive
+      Content-Type:
+      - application/json; charset=utf-8
+      X-Rate-Limit:
+      - 1/200
+      Vary:
+      - Accept-Encoding, Origin
+      Etag:
+      - W/"d0ab4f6dff3194cd0f40389429271b60"
+      Cache-Control:
+      - max-age=0, private, must-revalidate
+      X-Request-Id:
+      - b8ecdd3a-80bc-4388-9e9d-fa8e70a18255
+      X-Runtime:
+      - '0.028481'
+      Strict-Transport-Security:
+      - max-age=15552000; includeSubDomains
+      Transfer-Encoding:
+      - chunked
+      Via:
+      - 1.1 vegur
+    body:
+      encoding: ASCII-8BIT
+      string: '{"data":{"budgets":[{"id":"0f035ed8-1c2f-4a5d-b5ec-9570cc429d2d","name":"My
+        Budget","last_modified_on":"2018-12-25T19:56:39+00:00","first_month":"2018-12-01","last_month":"2019-01-01","date_format":{"format":"MM/DD/YYYY"},"currency_format":{"iso_code":"USD","example_format":"123,456.78","decimal_digits":2,"decimal_separator":".","symbol_first":true,"group_separator":",","currency_symbol":"$","display_symbol":true}}]}}'
+    http_version: 
+  recorded_at: Wed, 26 Dec 2018 22:09:20 GMT
+- request:
+    method: get
+    uri: https://api.youneedabudget.com/v1/budgets
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Authorization:
+      - Bearer <YNAB_USER_TOKEN>
+      User-Agent:
+      - Faraday v0.15.4
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Server:
+      - Cowboy
+      Date:
+      - Wed, 26 Dec 2018 22:09:21 GMT
+      Connection:
+      - keep-alive
+      Content-Type:
+      - application/json; charset=utf-8
+      X-Rate-Limit:
+      - 2/200
+      Vary:
+      - Accept-Encoding, Origin
+      Etag:
+      - W/"d0ab4f6dff3194cd0f40389429271b60"
+      Cache-Control:
+      - max-age=0, private, must-revalidate
+      X-Request-Id:
+      - 1636efb6-4058-4d60-8973-db0e6b011651
+      X-Runtime:
+      - '0.022041'
+      Strict-Transport-Security:
+      - max-age=15552000; includeSubDomains
+      Transfer-Encoding:
+      - chunked
+      Via:
+      - 1.1 vegur
+    body:
+      encoding: ASCII-8BIT
+      string: '{"data":{"budgets":[{"id":"0f035ed8-1c2f-4a5d-b5ec-9570cc429d2d","name":"My
+        Budget","last_modified_on":"2018-12-25T19:56:39+00:00","first_month":"2018-12-01","last_month":"2019-01-01","date_format":{"format":"MM/DD/YYYY"},"currency_format":{"iso_code":"USD","example_format":"123,456.78","decimal_digits":2,"decimal_separator":".","symbol_first":true,"group_separator":",","currency_symbol":"$","display_symbol":true}}]}}'
+    http_version: 
+  recorded_at: Wed, 26 Dec 2018 22:09:21 GMT
+recorded_with: VCR 4.0.0

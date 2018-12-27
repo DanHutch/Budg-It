@@ -1,1 +1,20 @@
-<h1><%= @user.name %>'s Dashboard</h1>
+<h1><%= @facade.username %>'s Dashboard</h1>
+
+<% if @facade.category_count == 0 %>
+	<%@facade.create_categories%>
+	<div>
+		<p>Please Select Category to Track:</p>
+	</div>
+	<%= form_tag(categories_path, method: "put") do %>
+		<% @facade.all_categories.each do |cat| %>
+			<%= radio_button_tag :category, cat.ynab_cid, class: "category" %> <%= cat.name %> <br>
+		<% end %>
+			<%= submit_tag("Select Category") %>
+	<% end %>
+
+<% elsif @facade.category_count > 0 %>
+	<div class="category-data">
+		<h4><u><%= @facade.tracked_cat_name %> Snapshot</u></h4>
+
+	</div>
+<% end %>

@@ -1,0 +1,127 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: https://api.youneedabudget.com/v1/budgets
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Authorization:
+      - Bearer <YNAB_USER_TOKEN>
+      User-Agent:
+      - Faraday v0.15.4
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Server:
+      - Cowboy
+      Date:
+      - Sun, 23 Dec 2018 23:58:09 GMT
+      Connection:
+      - keep-alive
+      Content-Type:
+      - application/json; charset=utf-8
+      X-Rate-Limit:
+      - 2/200
+      Vary:
+      - Accept-Encoding, Origin
+      Etag:
+      - W/"56c964fafc38ac83c8c820117e9cc3b7"
+      Cache-Control:
+      - max-age=0, private, must-revalidate
+      X-Request-Id:
+      - 987733ba-00bf-4bf4-b9fa-33b286ca1dd5
+      X-Runtime:
+      - '0.021293'
+      Strict-Transport-Security:
+      - max-age=15552000; includeSubDomains
+      Transfer-Encoding:
+      - chunked
+      Via:
+      - 1.1 vegur
+    body:
+      encoding: ASCII-8BIT
+      string: '{"data":{"budgets":[{"id":"0f035ed8-1c2f-4a5d-b5ec-9570cc429d2d","name":"My
+        Budget","last_modified_on":"2018-12-23T23:01:15+00:00","first_month":"2018-12-01","last_month":"2018-12-01","date_format":{"format":"MM/DD/YYYY"},"currency_format":{"iso_code":"USD","example_format":"123,456.78","decimal_digits":2,"decimal_separator":".","symbol_first":true,"group_separator":",","currency_symbol":"$","display_symbol":true}}]}}'
+    http_version: 
+  recorded_at: Sun, 23 Dec 2018 23:58:09 GMT
+- request:
+    method: get
+    uri: https://api.youneedabudget.com/v1/budgets/0f035ed8-1c2f-4a5d-b5ec-9570cc429d2d/categories
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Authorization:
+      - Bearer <YNAB_USER_TOKEN>
+      User-Agent:
+      - Faraday v0.15.4
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Server:
+      - Cowboy
+      Date:
+      - Sun, 23 Dec 2018 23:58:08 GMT
+      Connection:
+      - keep-alive
+      Content-Type:
+      - application/json; charset=utf-8
+      X-Rate-Limit:
+      - 3/200
+      Vary:
+      - Accept-Encoding, Origin
+      Etag:
+      - W/"510b0920e5ed5e652d2177e428b7dec0"
+      Cache-Control:
+      - max-age=0, private, must-revalidate
+      X-Request-Id:
+      - dea5014a-b541-4e82-878d-6f5a07f9df02
+      X-Runtime:
+      - '0.059487'
+      Strict-Transport-Security:
+      - max-age=15552000; includeSubDomains
+      Transfer-Encoding:
+      - chunked
+      Via:
+      - 1.1 vegur
+    body:
+      encoding: ASCII-8BIT
+      string: '{"data":{"category_groups":[{"id":"da6af03f-db1a-4926-9ccd-6d7c344aed3f","name":"Internal
+        Master Category","hidden":false,"deleted":false,"categories":[{"id":"d49041ae-9383-4e02-85ce-ef43379b560c","category_group_id":"da6af03f-db1a-4926-9ccd-6d7c344aed3f","name":"To
+        be Budgeted","hidden":false,"original_category_group_id":null,"note":null,"budgeted":0,"activity":0,"balance":0,"goal_type":null,"goal_creation_month":null,"goal_target":0,"goal_target_month":null,"goal_percentage_complete":0,"deleted":false},{"id":"e67c3517-72db-49d9-b359-eccf64db9ecd","category_group_id":"da6af03f-db1a-4926-9ccd-6d7c344aed3f","name":"Deferred
+        Income SubCategory","hidden":false,"original_category_group_id":null,"note":null,"budgeted":0,"activity":0,"balance":0,"goal_type":null,"goal_creation_month":null,"goal_target":0,"goal_target_month":null,"goal_percentage_complete":0,"deleted":false},{"id":"c4f55314-1aaa-4d1c-9716-982cbeb5ce6f","category_group_id":"da6af03f-db1a-4926-9ccd-6d7c344aed3f","name":"Uncategorized","hidden":false,"original_category_group_id":null,"note":null,"budgeted":0,"activity":0,"balance":0,"goal_type":null,"goal_creation_month":null,"goal_target":0,"goal_target_month":null,"goal_percentage_complete":0,"deleted":false}]},{"id":"d4258102-a423-405b-bf42-ff799e0a9e86","name":"Credit
+        Card Payments","hidden":false,"deleted":false,"categories":[]},{"id":"4efd27b3-7a4e-4acf-be23-68ace02bf7a5","name":"Immediate
+        Obligations","hidden":false,"deleted":false,"categories":[{"id":"c8d0710e-e7e3-404c-a07e-3aafb089d80b","category_group_id":"4efd27b3-7a4e-4acf-be23-68ace02bf7a5","name":"Rent/Mortgage","hidden":false,"original_category_group_id":null,"note":null,"budgeted":0,"activity":0,"balance":0,"goal_type":null,"goal_creation_month":null,"goal_target":0,"goal_target_month":null,"goal_percentage_complete":0,"deleted":false},{"id":"2560ffa7-6389-4edf-b7c9-b1c2a4147eaa","category_group_id":"4efd27b3-7a4e-4acf-be23-68ace02bf7a5","name":"Electric","hidden":false,"original_category_group_id":null,"note":null,"budgeted":0,"activity":0,"balance":0,"goal_type":null,"goal_creation_month":null,"goal_target":0,"goal_target_month":null,"goal_percentage_complete":0,"deleted":false},{"id":"b94bd343-89d6-4d60-8298-22e98940f2c2","category_group_id":"4efd27b3-7a4e-4acf-be23-68ace02bf7a5","name":"Water","hidden":false,"original_category_group_id":null,"note":null,"budgeted":0,"activity":0,"balance":0,"goal_type":null,"goal_creation_month":null,"goal_target":0,"goal_target_month":null,"goal_percentage_complete":0,"deleted":false},{"id":"cb6172e8-dcb3-41c9-a900-a0215751b68c","category_group_id":"4efd27b3-7a4e-4acf-be23-68ace02bf7a5","name":"Internet","hidden":false,"original_category_group_id":null,"note":null,"budgeted":0,"activity":0,"balance":0,"goal_type":null,"goal_creation_month":null,"goal_target":0,"goal_target_month":null,"goal_percentage_complete":0,"deleted":false},{"id":"38e51ae5-519e-4c08-8f6b-2c74d5e58c38","category_group_id":"4efd27b3-7a4e-4acf-be23-68ace02bf7a5","name":"Food","hidden":false,"original_category_group_id":null,"note":null,"budgeted":200000,"activity":0,"balance":200000,"goal_type":null,"goal_creation_month":null,"goal_target":0,"goal_target_month":null,"goal_percentage_complete":0,"deleted":false},{"id":"2d7f8eff-562f-4ac7-8363-71b1a7ed674d","category_group_id":"4efd27b3-7a4e-4acf-be23-68ace02bf7a5","name":"Transportation","hidden":false,"original_category_group_id":null,"note":null,"budgeted":0,"activity":0,"balance":0,"goal_type":null,"goal_creation_month":null,"goal_target":0,"goal_target_month":null,"goal_percentage_complete":0,"deleted":false},{"id":"227a3469-e752-48ac-9c9a-a3ac4bd3df10","category_group_id":"4efd27b3-7a4e-4acf-be23-68ace02bf7a5","name":"Interest
+        & Fees","hidden":false,"original_category_group_id":null,"note":null,"budgeted":0,"activity":0,"balance":0,"goal_type":null,"goal_creation_month":null,"goal_target":0,"goal_target_month":null,"goal_percentage_complete":0,"deleted":false}]},{"id":"ad1a8b8f-e9ea-4c23-a5f9-ff886f02d0f4","name":"True
+        Expenses","hidden":false,"deleted":false,"categories":[{"id":"d97de98a-4455-4bdf-96f5-8e9d7c004d4f","category_group_id":"ad1a8b8f-e9ea-4c23-a5f9-ff886f02d0f4","name":"Auto
+        Maintenance","hidden":false,"original_category_group_id":null,"note":null,"budgeted":0,"activity":0,"balance":0,"goal_type":null,"goal_creation_month":null,"goal_target":0,"goal_target_month":null,"goal_percentage_complete":0,"deleted":false},{"id":"c71e9311-2c1d-4989-aa85-a791f12e7980","category_group_id":"ad1a8b8f-e9ea-4c23-a5f9-ff886f02d0f4","name":"Home
+        Maintenance","hidden":false,"original_category_group_id":null,"note":null,"budgeted":0,"activity":0,"balance":0,"goal_type":null,"goal_creation_month":null,"goal_target":0,"goal_target_month":null,"goal_percentage_complete":0,"deleted":false},{"id":"00475659-7192-41dd-bda4-8d9224cf7159","category_group_id":"ad1a8b8f-e9ea-4c23-a5f9-ff886f02d0f4","name":"Renter''s/Home
+        Insurance","hidden":false,"original_category_group_id":null,"note":null,"budgeted":0,"activity":0,"balance":0,"goal_type":null,"goal_creation_month":null,"goal_target":0,"goal_target_month":null,"goal_percentage_complete":0,"deleted":false},{"id":"4334682c-b090-4963-ac26-2c9037bf4bf6","category_group_id":"ad1a8b8f-e9ea-4c23-a5f9-ff886f02d0f4","name":"Medical","hidden":false,"original_category_group_id":null,"note":null,"budgeted":0,"activity":0,"balance":0,"goal_type":null,"goal_creation_month":null,"goal_target":0,"goal_target_month":null,"goal_percentage_complete":0,"deleted":false},{"id":"870a603d-75ad-4dae-8b95-01413df67371","category_group_id":"ad1a8b8f-e9ea-4c23-a5f9-ff886f02d0f4","name":"Clothing","hidden":false,"original_category_group_id":null,"note":null,"budgeted":0,"activity":0,"balance":0,"goal_type":null,"goal_creation_month":null,"goal_target":0,"goal_target_month":null,"goal_percentage_complete":0,"deleted":false},{"id":"4b423460-55bd-4bb6-9fcf-02b8c26d45e6","category_group_id":"ad1a8b8f-e9ea-4c23-a5f9-ff886f02d0f4","name":"Gifts","hidden":false,"original_category_group_id":null,"note":null,"budgeted":0,"activity":0,"balance":0,"goal_type":null,"goal_creation_month":null,"goal_target":0,"goal_target_month":null,"goal_percentage_complete":0,"deleted":false},{"id":"1aa8ab9f-978f-4324-a8bb-7ce73460d5ef","category_group_id":"ad1a8b8f-e9ea-4c23-a5f9-ff886f02d0f4","name":"Giving","hidden":false,"original_category_group_id":null,"note":null,"budgeted":0,"activity":0,"balance":0,"goal_type":null,"goal_creation_month":null,"goal_target":0,"goal_target_month":null,"goal_percentage_complete":0,"deleted":false},{"id":"4ebc68e9-bb45-4228-a3e1-ae249f26e714","category_group_id":"ad1a8b8f-e9ea-4c23-a5f9-ff886f02d0f4","name":"Computer
+        Replacement","hidden":false,"original_category_group_id":null,"note":null,"budgeted":0,"activity":0,"balance":0,"goal_type":null,"goal_creation_month":null,"goal_target":0,"goal_target_month":null,"goal_percentage_complete":0,"deleted":false},{"id":"ddc6d7d4-828e-4104-b8c1-1914a04da470","category_group_id":"ad1a8b8f-e9ea-4c23-a5f9-ff886f02d0f4","name":"Software
+        Subscriptions","hidden":false,"original_category_group_id":null,"note":null,"budgeted":0,"activity":0,"balance":0,"goal_type":null,"goal_creation_month":null,"goal_target":0,"goal_target_month":null,"goal_percentage_complete":0,"deleted":false},{"id":"885023fb-5052-43a7-9ce8-877c73eb482f","category_group_id":"ad1a8b8f-e9ea-4c23-a5f9-ff886f02d0f4","name":"Stuff
+        I Forgot to Budget For","hidden":false,"original_category_group_id":null,"note":null,"budgeted":0,"activity":0,"balance":0,"goal_type":null,"goal_creation_month":null,"goal_target":0,"goal_target_month":null,"goal_percentage_complete":0,"deleted":false}]},{"id":"0a258c78-1bd7-4feb-95fe-d3d66909d79c","name":"Debt
+        Payments","hidden":false,"deleted":false,"categories":[{"id":"aa0eeb6f-bd34-4bde-b930-38dec869acc5","category_group_id":"0a258c78-1bd7-4feb-95fe-d3d66909d79c","name":"Student
+        Loan","hidden":false,"original_category_group_id":null,"note":null,"budgeted":0,"activity":0,"balance":0,"goal_type":null,"goal_creation_month":null,"goal_target":0,"goal_target_month":null,"goal_percentage_complete":0,"deleted":false},{"id":"cf6a68f5-6615-4911-bd78-10edd480161f","category_group_id":"0a258c78-1bd7-4feb-95fe-d3d66909d79c","name":"Auto
+        Loan","hidden":false,"original_category_group_id":null,"note":null,"budgeted":0,"activity":0,"balance":0,"goal_type":null,"goal_creation_month":null,"goal_target":0,"goal_target_month":null,"goal_percentage_complete":0,"deleted":false}]},{"id":"a122c51e-2798-41be-a7b8-8c6e40a9b360","name":"Quality
+        of Life Goals","hidden":false,"deleted":false,"categories":[{"id":"3f82de3b-c5e4-4444-bafc-c02a066bd9a9","category_group_id":"a122c51e-2798-41be-a7b8-8c6e40a9b360","name":"Vacation","hidden":false,"original_category_group_id":null,"note":null,"budgeted":0,"activity":0,"balance":0,"goal_type":null,"goal_creation_month":null,"goal_target":0,"goal_target_month":null,"goal_percentage_complete":0,"deleted":false},{"id":"588d6175-ad8f-4a82-81ce-77a094a6cab0","category_group_id":"a122c51e-2798-41be-a7b8-8c6e40a9b360","name":"Fitness","hidden":false,"original_category_group_id":null,"note":null,"budgeted":0,"activity":0,"balance":0,"goal_type":null,"goal_creation_month":null,"goal_target":0,"goal_target_month":null,"goal_percentage_complete":0,"deleted":false},{"id":"9c10ef82-01ac-4e94-9d68-a86c58309f35","category_group_id":"a122c51e-2798-41be-a7b8-8c6e40a9b360","name":"Education","hidden":false,"original_category_group_id":null,"note":null,"budgeted":0,"activity":0,"balance":0,"goal_type":null,"goal_creation_month":null,"goal_target":0,"goal_target_month":null,"goal_percentage_complete":0,"deleted":false}]},{"id":"3e2a7e64-cd6e-4bff-b1ee-d3b4803cb0d7","name":"Just
+        for Fun","hidden":false,"deleted":false,"categories":[{"id":"f94fe5e2-eac8-42c4-aa14-766444dea272","category_group_id":"3e2a7e64-cd6e-4bff-b1ee-d3b4803cb0d7","name":"Dining
+        Out","hidden":false,"original_category_group_id":null,"note":null,"budgeted":0,"activity":0,"balance":0,"goal_type":null,"goal_creation_month":null,"goal_target":0,"goal_target_month":null,"goal_percentage_complete":0,"deleted":false},{"id":"671e04ab-913e-4c3b-a50b-aac4c9d86630","category_group_id":"3e2a7e64-cd6e-4bff-b1ee-d3b4803cb0d7","name":"Gaming","hidden":false,"original_category_group_id":null,"note":null,"budgeted":0,"activity":0,"balance":0,"goal_type":null,"goal_creation_month":null,"goal_target":0,"goal_target_month":null,"goal_percentage_complete":0,"deleted":false},{"id":"bf1ab347-d959-4b53-b034-6bd1dd03fba6","category_group_id":"3e2a7e64-cd6e-4bff-b1ee-d3b4803cb0d7","name":"Music","hidden":false,"original_category_group_id":null,"note":null,"budgeted":0,"activity":0,"balance":0,"goal_type":null,"goal_creation_month":null,"goal_target":0,"goal_target_month":null,"goal_percentage_complete":0,"deleted":false},{"id":"5f6fb69c-d33c-4ca5-bf65-a1c9f51c477b","category_group_id":"3e2a7e64-cd6e-4bff-b1ee-d3b4803cb0d7","name":"Fun
+        Money","hidden":false,"original_category_group_id":null,"note":null,"budgeted":0,"activity":0,"balance":0,"goal_type":null,"goal_creation_month":null,"goal_target":0,"goal_target_month":null,"goal_percentage_complete":0,"deleted":false}]},{"id":"70d56c53-f510-4b27-ac83-6c82f52104dc","name":"Hidden
+        Categories","hidden":false,"deleted":false,"categories":[]}]}}'
+    http_version: 
+  recorded_at: Sun, 23 Dec 2018 23:58:09 GMT
+recorded_with: VCR 4.0.0

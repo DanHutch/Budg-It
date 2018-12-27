@@ -1,6 +1,6 @@
 class User < ApplicationRecord
 	has_many :tokens
-	has_many :budgets
+	has_many :categories
 
 	validates_presence_of :name
 	validates_presence_of :phone
@@ -9,5 +9,9 @@ class User < ApplicationRecord
 
 	# after_create do
 	#   UserTexter.welcome(self).deliver
-  # end
+	# end
+	def tracked_category
+		self.categories.find_by(tracked: true)
+	end
+
 end

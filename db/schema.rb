@@ -15,18 +15,13 @@ ActiveRecord::Schema.define(version: 2018_12_18_201727) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
-  create_table "budgets", force: :cascade do |t|
-    t.bigint "user_id"
-    t.string "ynab_bid"
-    t.string "name"
-    t.index ["user_id"], name: "index_budgets_on_user_id"
-  end
-
   create_table "categories", force: :cascade do |t|
     t.string "ynab_cid"
     t.string "name"
-    t.bigint "budget_id"
-    t.index ["budget_id"], name: "index_categories_on_budget_id"
+    t.string "budget_id"
+    t.boolean "tracked", default: false
+    t.bigint "user_id"
+    t.index ["user_id"], name: "index_categories_on_user_id"
   end
 
   create_table "days", force: :cascade do |t|
@@ -57,8 +52,7 @@ ActiveRecord::Schema.define(version: 2018_12_18_201727) do
     t.string "email"
   end
 
-  add_foreign_key "budgets", "users"
-  add_foreign_key "categories", "budgets"
+  add_foreign_key "categories", "users"
   add_foreign_key "days", "notifications"
   add_foreign_key "notifications", "categories"
   add_foreign_key "tokens", "users"
