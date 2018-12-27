@@ -1,0 +1,54 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: https://api.youneedabudget.com/v1/budgets/0f035ed8-1c2f-4a5d-b5ec-9570cc429d2d/categories/38e51ae5-519e-4c08-8f6b-2c74d5e58c38
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Authorization:
+      - Bearer <YNAB_USER_TOKEN>
+      User-Agent:
+      - Faraday v0.15.4
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Server:
+      - Cowboy
+      Date:
+      - Thu, 27 Dec 2018 16:57:00 GMT
+      Connection:
+      - keep-alive
+      Content-Type:
+      - application/json; charset=utf-8
+      X-Rate-Limit:
+      - 2/200
+      Vary:
+      - Accept-Encoding, Origin
+      Etag:
+      - W/"d730947fcbf5b4b0fa19a92e4857828f"
+      Cache-Control:
+      - max-age=0, private, must-revalidate
+      X-Request-Id:
+      - 0366a1c9-efa9-4c4f-b6fc-071f10eebfea
+      X-Runtime:
+      - '0.084858'
+      Strict-Transport-Security:
+      - max-age=15552000; includeSubDomains
+      Transfer-Encoding:
+      - chunked
+      Via:
+      - 1.1 vegur
+    body:
+      encoding: ASCII-8BIT
+      string: '{"data":{"category":{"id":"38e51ae5-519e-4c08-8f6b-2c74d5e58c38","category_group_id":"4efd27b3-7a4e-4acf-be23-68ace02bf7a5","name":"Food","hidden":false,"original_category_group_id":null,"note":null,"budgeted":200000,"activity":0,"balance":200000,"goal_type":null,"goal_creation_month":null,"goal_target":0,"goal_target_month":null,"goal_percentage_complete":0,"deleted":false}}}'
+    http_version: 
+  recorded_at: Thu, 27 Dec 2018 16:57:01 GMT
+recorded_with: VCR 4.0.0

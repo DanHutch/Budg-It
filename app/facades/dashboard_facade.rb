@@ -3,6 +3,7 @@ class DashboardFacade
 	def initialize(user)
 		@user = user
 		@_category_results = nil
+		@_snapshot_results = nil
 	end
 
 	def user
@@ -25,6 +26,10 @@ class DashboardFacade
 		@user.name
 	end
 
+	def snapshot
+		snap = Snapshot.new(snapshot_results)
+	end
+
 	def create_categories
 		category_results.map do |cat_info|
 		@user.categories.create({
@@ -40,6 +45,10 @@ class DashboardFacade
 	end
 
 private
+
+	def snapshot_results
+		@_snapshot_results ||= service.get_snapshot(@user)
+	end
 
 	def category_results
 		@_category_results ||= service.get_categories

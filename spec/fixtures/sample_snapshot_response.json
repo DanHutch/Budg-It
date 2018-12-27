@@ -1,0 +1,21 @@
+{
+	"data": {
+		"category": {
+			"id": "38e51ae5-519e-4c08-8f6b-2c74d5e58c38",
+			"category_group_id": "4efd27b3-7a4e-4acf-be23-68ace02bf7a5",
+			"name": "Food",
+			"hidden": false,
+			"original_category_group_id": null,
+			"note": null,
+			"budgeted": 200000,
+			"activity": 0,
+			"balance": 200000,
+			"goal_type": null,
+			"goal_creation_month": null,
+			"goal_target": 0,
+			"goal_target_month": null,
+			"goal_percentage_complete": 0,
+			"deleted": false
+		}
+	}
+}
