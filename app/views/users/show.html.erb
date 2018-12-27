@@ -1,6 +1,6 @@
 <h1><%= @facade.username %>'s Dashboard</h1>
 
-<% if @facade.category_count == 0 %>
+<% if @facade.tracked_category == nil %>
 	<%@facade.create_categories%>
 	<div>
 		<p>Please Select Category to Track:</p>
@@ -12,9 +12,11 @@
 			<%= submit_tag("Select Category") %>
 	<% end %>
 
-<% elsif @facade.category_count > 0 %>
+<% else %>
 	<div class="category-data">
 		<h4><u><%= @facade.tracked_cat_name %> Snapshot</u></h4>
-
+		<div class="api-data">
+			<% @facade.snapshot %>
+		</div>
 	</div>
 <% end %>

@@ -3,6 +3,11 @@ class YnabService
 	def initialize(token)
 		@token = token
 		@_budget_id = nil
+		@_category_id = nil
+	end
+
+	def snap_category(user)
+		user.tracked_category
 	end
 
 	def budget_id
@@ -12,6 +17,11 @@ class YnabService
 	def get_uid
 		info = get_json("/v1/user")
 		id = info[:data][:user][:id]
+	end
+
+	def get_snapshot(user)
+		info = get_json("/v1/budgets/#{snap_category(user).budget_id}/categories/#{snap_category(user).ynab_cid}")
+		snapshot = info[:data][:category]
 	end
 
 	def get_categories
@@ -24,7 +34,7 @@ class YnabService
 		budget = info[:data][:budgets].first
 	end
 
-private
+	private
 
 	def get_json(path)
 		response = conn.get(path)

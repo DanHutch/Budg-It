@@ -12,6 +12,7 @@ RSpec.describe "/dashboard" do
 		stub_budgets_api_calls
 		stub_categories_api_calls
 		stub_omniauth
+		stub_snapshot_api_calls
 		visit dashboard_path
 
 		expect(page).to have_content("#{user.name}'s Dashboard")
