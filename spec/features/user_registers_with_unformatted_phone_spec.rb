@@ -37,7 +37,6 @@ RSpec.describe "user registration" do
 		click_on("Register User")
 		expect(current_path).to eq(registration_path)
 		expect(page).to have_content("Email already in use.")
-
 	end
 
 end
