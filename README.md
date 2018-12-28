@@ -59,6 +59,8 @@ At this point, you should be able to run the local test suite using `bundle exec
 
 Budg-It uses `omniauth-ynab`, `sendgrid-ruby`, `twilio-ruby`, as well as the YNAB API, all of which have their own requirements for permission to use their software and data. You are responsible for knowing and implementing the requisite policies and code for their respective uses. We recommend using `figaro` to hide secret keys and other confidential information that is necessary in order to make use of these resources.
 
+It should also be noted that YNAB does not allow unsecured callback URI to be used with `omniauth-ynab`. This means that, if you are using a locally-hosted server in development (or any non-https host) then you will need to use a tunneling service or other method to forward from a secure callback address for the YNAB OmniAuth handshake process to work in this environment. During development of Budg-It, `ngrok` was used for this purpose, and is recommended.
+
 ### Future Iterations:
 
 - Real-time switching between tracked budget categories within the default budget and category-group.
@@ -73,7 +75,5 @@ Please make sure to test your feature fully, using RSpec, before commiting your 
 
 Please contact Dan Hutchinson, Silvestre Cuellar, or Timothy Fell on Github if you have any questions etc. Thank you!
 
-* Services (job queues, cache servers, search engines, etc.)
-* Deployment instructions
 
 
