@@ -73,7 +73,7 @@ In order to contribute, please fork this repo, then clone your new repo and crea
 
 Please make sure to test your feature fully, using RSpec, before commiting your changes and pushing to your own repo, then create and submit a pull request back to this repository.
 
-Please contact Dan Hutchinson, Silvestre Cuellar, or Timothy Fell on Github if you have any questions etc. Thank you!
+Please contact Dan Hutchinson, Silvestre Cuellar, or Timothy Fell on Github if you have any questions, etc. Thank you!
 
 
 
