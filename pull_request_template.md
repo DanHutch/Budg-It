@@ -34,4 +34,4 @@ closes #
 - [ ] I have fully tested my code
 
 # Please include a link to a gif of how you feel about this branch:
-![text](<link goes here>)
+![text]( gif_link_goes_here )
