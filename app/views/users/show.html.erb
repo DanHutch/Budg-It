@@ -1,22 +1,51 @@
-<h1><%= @facade.username %>'s Dashboard</h1>
+<section>
+	<div class="container">
+		<h2><%= @facade.username %>'s Dashboard</h2>
 
-<% if @facade.tracked_category == nil %>
-	<%@facade.create_categories%>
-	<div>
-		<p>Please Select Category to Track:</p>
-	</div>
-	<%= form_tag(categories_path, method: "put") do %>
-		<% @facade.all_categories.each do |cat| %>
-			<%= radio_button_tag :category, cat.ynab_cid, class: "category" %> <%= cat.name %> <br>
+		<% if @facade.tracked_category == nil %>
+			<%@facade.create_categories%>
+			<div>
+				<p>Please Select Category to Track:</p>
+			</div>
+			<%= form_tag(categories_path, method: "put") do %>
+				<% @facade.all_categories.each do |cat| %>
+					<%= radio_button_tag :category, cat.ynab_cid, class: "category" %> <%= cat.name %> <br>
+				<% end %>
+					<%= submit_tag("Select Category") %>
+			<% end %>
+
+		<% else %>
+			<div class="category-data">
+				<h3>Monthly <%= @facade.snapshot.name %> Snapshot</h3>
+				<div class="api-data">
+					<ul>
+						<li>Budgeted: <%= number_to_currency(@facade.snapshot.budgeted) %></li>
+						<li>Activity: <%= number_to_currency(@facade.snapshot.spent) %></li>
+						<li>Remaining Balance: <%= number_to_currency(@facade.snapshot.remaining) %></li>
+						<li>Daily Allotment: <%= number_to_currency(@facade.snapshot.daily_allotment) %> per day</li>
+					</ul>
+					<div id="budget_pie"></div>
+					<script>
+			      window.onload = function() {
+
+			      var chart = new CanvasJS.Chart("budget_pie", {
+			      	animationEnabled: true,
+			      	data: [{
+			      		type: "pie",
+			      		startAngle: 240,
+			      		yValueFormatString: "##0.00\"%\"",
+			      		indexLabel: "{label} {y}",
+			      		dataPoints: [
+			      			{y: <%= (@facade.snapshot.spent / @facade.snapshot.budgeted) * 100 %>, label: "Activity"},
+			      			{y: <%= (@facade.snapshot.remaining / @facade.snapshot.budgeted) * 100 %>, label: "Remaining"},
+			      		]
+			      	}]
+			      });
+			      chart.render();
+			      }
+			    </script>
+				</div>
+			</div>
 		<% end %>
-			<%= submit_tag("Select Category") %>
-	<% end %>
-
-<% else %>
-	<div class="category-data">
-		<h4><u><%= @facade.tracked_cat_name %> Snapshot</u></h4>
-		<div class="api-data">
-			<% @facade.snapshot %>
-		</div>
 	</div>
-<% end %>
+</section>

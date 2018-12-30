@@ -74,3 +74,7 @@ def stub_snapshot_api_calls
    stub_request(:get, "https://api.youneedabudget.com/v1/budgets/0f035ed8-1c2f-4a5d-b5ec-9570cc429d2d/categories/c8d0710e-e7e3-404c-a07e-3aafb089d80b").
       to_return(body: File.read("./spec/fixtures/sample_snapshot_response.json"))
 end
+
+class NumHelperMethods
+  include ActionView::Helpers::NumberHelper
+end
