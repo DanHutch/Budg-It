@@ -1,26 +1,79 @@
-# Budg-It
+# README
+## Budg-It
 
-Rails app to give users notifications based on budget when they enter a store/restaurant. Consumes an api from a budgeting app and an database of consumer locations.
+Budg-It is a rails-app designed to allow a user to access visual at-a-glance budget snapshots for particular categories within the "Immediate Obligations" (first) category group of their own budget, as tracked by the app, You Need a Budget. Budg-It consumes data from the You Need a Budget API and also authenticates users using YNAB-provided OmniAuth. It was developed using Ruby 2.4.1 and Rails 5.2.2.
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+### Setup:
 
-Things you may want to cover:
+To begin, clone this repo:
 
-* Ruby version
+```
+git@github.com:TimothyFell/Budg-It.git
+```
+After you `cd` into the project directory, run `bundle install` from the command line.
+Next, run `bundle exec rake db:{drop,create,migrate}` to create the database and schema.
 
-* System dependencies
+At this point, you should be able to run the local test suite using `bundle exec rspec`.
 
-* Configuration
+### Gems:
+
+- rails
+- pg
+- puma
+- sass-rails
+- uglifier
+- coffee-rails
+- jbuilder
+- bootsnap
+- faraday
+- figaro
+- factory_bot_rails
+- faker
+- sendgrid-ruby
+- omniauth
+- omniauth-ynab
+- twilio-ruby
+- textris
+- byebug
+- rspec-rails
+- database_cleaner
+- simplecov
+- shoulda-matchers
+- capybara
+- capybara-email
+- launchy
+- webmock
+- vcr
+- pry
+- fuubar
+- mailcatcher
+- web-console
+- listen
+- tzinfo-data
+
+### Schema:
 
 ![Schema Diagram](./schema_diagram.png)
 
-* Database creation
+### Requirements, Access, Security:
 
-* Database initialization
+Budg-It uses `omniauth-ynab`, `sendgrid-ruby`, `twilio-ruby`, as well as the YNAB API, all of which have their own requirements for permission to use their software and data. You are responsible for knowing and implementing the requisite policies and code for their respective uses. We recommend using `figaro` to hide secret keys and other confidential information that is necessary in order to make use of these resources.
 
-* How to run the test suite
+### Future Iterations:
+
+- Real-time switching between tracked budget categories within the default budget and category-group.
+
+-	Budget snapshots sent at user-selected times, via text and email.
+
+### Contributing:
+
+In order to contribute, please fork this repo, then clone your new repo and create a branch for your feature.
+
+Please make sure to test your feature fully, using RSpec, before commiting your changes and pushing to your own repo, then create and submit a pull request back to this repository.
+
+Please contact Dan Hutchinson, Silvestre Cuellar, or Timothy Fell on Github if you have any questions etc. Thank you!
 
 * Services (job queues, cache servers, search engines, etc.)
-
 * Deployment instructions
+
+
