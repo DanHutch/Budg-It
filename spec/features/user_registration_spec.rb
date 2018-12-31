@@ -50,7 +50,7 @@ RSpec.describe "User Registration" do
     texts = Textris::Base.deliveries
 
     expect(texts).to_not be_empty
-    expect(texts.last.content).to have_content("Welcome to BudgIt #{@name}!")
+    expect(texts.last.content).to have_content("Welcome to Budg-It #{@name}!")
   end
 
 end
