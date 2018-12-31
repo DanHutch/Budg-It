@@ -21,6 +21,7 @@ class SessionsController < ApplicationController
 		else
 			user_id = GetYnabUserData.check_it(token_code)
 			user = Token.find_by(uid: user_id).user
+			user.tokens.last.update(token: token_code, refresh_token: data["refresh_token"]) if user.tokens.last.token != token_entry
 			session[:user_id] = user.id
 			redirect_to dashboard_path
 		end
