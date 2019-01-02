@@ -15,7 +15,7 @@ class Snapshot
 	def daily_allotment
 		today = Date.today.day
 		end_of_month = Date.today.end_of_month.day
-		@remaining / (end_of_month - today)
+		(@remaining / (end_of_month - today)).round(2)
 	end
 
 end
