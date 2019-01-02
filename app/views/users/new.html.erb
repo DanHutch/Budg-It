@@ -1,14 +1,15 @@
-<h1>Register</h1>
-
-<%= form_for @user do |f| %>
-	<%= f.label :name%>
-	<%= f.text_field :name, placeholder: "Your Name" %><br>
-	<%= f.label :phone%>
-	<%= f.text_field :phone, placeholder: "###-###-####" %><br>
-	<%= f.label :email %>
-	<%= f.text_field :email, placeholder: "Your Email Address" %><br>
-	<%= f.submit "Register User"%>		
-<% end %>
-	
-
-<%= link_to "Privacy Policy", privacy_path %>
+<section>
+	<div class="container">
+		<h1>Register</h1>
+		<%= form_for @user do |f| %>
+			<%= f.label :name%>
+			<%= f.text_field :name, placeholder: "Your Name" %><br>
+			<%= f.label :phone%>
+			<%= f.text_field :phone, placeholder: "###-###-####" %><br>
+			<%= f.label :email %>
+			<%= f.text_field :email, placeholder: "Your Email Address" %><br>
+			<%= f.submit "Register User"%>
+			<p class="privacy_policy"><%= link_to "Privacy Policy", privacy_path %></p>
+		<% end %>
+	</div>
+</section>
