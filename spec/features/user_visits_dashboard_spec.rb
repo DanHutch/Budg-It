@@ -18,7 +18,7 @@ RSpec.describe "/dashboard" do
 		h = NumHelperMethods.new
 		today = Date.today.day
 		end_of_month = Date.today.end_of_month.day
-		@daily = h.number_to_currency((@category['balance'] / (end_of_month - today)) / 1000)
+		@daily = h.number_to_currency(((@category['balance'].to_f / (end_of_month - today)) / 1000).round(2))
 
 		visit dashboard_path
 	end

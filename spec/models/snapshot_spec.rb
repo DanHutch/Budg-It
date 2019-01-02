@@ -25,7 +25,7 @@ RSpec.describe Snapshot, type: :model do
 
 			today = Date.today.day
 			end_of_month = Date.today.end_of_month.day
-			daily = (data[:balance].to_f / (end_of_month - today)) / 1000
+			daily = ((data[:balance].to_f / (end_of_month - today)) / 1000).round(2)
 
 			snap = Snapshot.new(data)
 			expect(snap).to be_a(Snapshot)
